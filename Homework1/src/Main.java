@@ -17,9 +17,9 @@ public class Main {
 		
 		Student[] students = {student1,student2};
 		
-		for (Student student : students) {
-			System.out.println(student.FirstName);
-		}
+		studentmanager.GetStudents(students);
+		
+		
 		
 		
 		studentmanager.AddStudent(student1);
