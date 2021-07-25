@@ -1,13 +1,13 @@
-package Concrete;
+package src.Concrete;
 
 
-import Abstract.CustomerCheckService;
-import Entities.Customer;
+import src.Abstract.CustomerCheckService;
+import src.Entities.Customer;
 
 
 public class CustomerCheckManager implements CustomerCheckService {
 
-	@Override
+
 	public boolean CheckIfRealPerson(Customer customer) {
 		return true;		
 	}

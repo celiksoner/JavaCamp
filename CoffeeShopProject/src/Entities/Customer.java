@@ -1,7 +1,7 @@
-package Entities;
+package src.Entities;
 
 
-public class Customer implements Abstract.Entity{
+public class Customer implements src.Abstract.Entity{
 	public int id;
 	public String firstName;
 	public String lastName;

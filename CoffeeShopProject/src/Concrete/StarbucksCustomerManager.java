@@ -1,9 +1,9 @@
-package Concrete;
+package src.Concrete;
 
 import java.rmi.RemoteException;
 
-import Abstract.CustomerCheckService;
-import Entities.Customer;
+import src.Abstract.CustomerCheckService;
+import src.Entities.Customer;
 
 public class StarbucksCustomerManager extends BaseCustomerManager{
 	

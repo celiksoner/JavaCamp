@@ -1,13 +1,15 @@
+package src;
+
 
 
 import java.rmi.RemoteException;
 
 
-import Adapters.MernisServiceAdapter;
-import Concrete.BaseCustomerManager;
+import src.Adapters.MernisServiceAdapter;
+import src.Concrete.BaseCustomerManager;
 
-import Concrete.StarbucksCustomerManager;
-import Entities.Customer;
+import src.Concrete.StarbucksCustomerManager;
+import src.Entities.Customer;
 
 public class Main {
 
@@ -15,7 +17,7 @@ public class Main {
 		BaseCustomerManager customerManager = new StarbucksCustomerManager(new MernisServiceAdapter());
 		//Aþaðýdaki TC doðru deðil kendi bilgileriniz girerek deneyebilirsiniz.
 		
-		customerManager.save(new Customer(1,"Soner","Çelik",1994,"45466961903"));
+		customerManager.save(new Customer(1,"Soner","Çelik",1994,"1234567890"));
 		
 	}
 

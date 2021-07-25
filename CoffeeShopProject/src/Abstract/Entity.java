@@ -1,4 +1,4 @@
-package Abstract;
+package src.Abstract;
 
 public interface Entity {
 

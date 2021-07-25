@@ -6,9 +6,9 @@
  */
 
 
-package tr.gov.nvi.tckimlik.WS;
+package src.tr.gov.nvi.tckimlik.WS;
 
-public class KPSPublicLocator extends org.apache.axis.client.Service implements tr.gov.nvi.tckimlik.WS.KPSPublic {
+public class KPSPublicLocator extends org.apache.axis.client.Service implements src.tr.gov.nvi.tckimlik.WS.KPSPublic {
 
     /**
 	 * 
@@ -45,7 +45,7 @@ public class KPSPublicLocator extends org.apache.axis.client.Service implements 
         KPSPublicSoapWSDDServiceName = name;
     }
 
-    public tr.gov.nvi.tckimlik.WS.KPSPublicSoap getKPSPublicSoap() throws javax.xml.rpc.ServiceException {
+    public src.tr.gov.nvi.tckimlik.WS.KPSPublicSoap getKPSPublicSoap() throws javax.xml.rpc.ServiceException {
        java.net.URL endpoint;
         try {
             endpoint = new java.net.URL(KPSPublicSoap_address);
@@ -56,9 +56,9 @@ public class KPSPublicLocator extends org.apache.axis.client.Service implements 
         return getKPSPublicSoap(endpoint);
     }
 
-    public tr.gov.nvi.tckimlik.WS.KPSPublicSoap getKPSPublicSoap(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
+    public src.tr.gov.nvi.tckimlik.WS.KPSPublicSoap getKPSPublicSoap(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
         try {
-            tr.gov.nvi.tckimlik.WS.KPSPublicSoapStub _stub = new tr.gov.nvi.tckimlik.WS.KPSPublicSoapStub(portAddress, this);
+            src.tr.gov.nvi.tckimlik.WS.KPSPublicSoapStub _stub = new src.tr.gov.nvi.tckimlik.WS.KPSPublicSoapStub(portAddress, this);
             _stub.setPortName(getKPSPublicSoapWSDDServiceName());
             return _stub;
         }
@@ -78,8 +78,8 @@ public class KPSPublicLocator extends org.apache.axis.client.Service implements 
      */
     public java.rmi.Remote getPort(Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
         try {
-            if (tr.gov.nvi.tckimlik.WS.KPSPublicSoap.class.isAssignableFrom(serviceEndpointInterface)) {
-                tr.gov.nvi.tckimlik.WS.KPSPublicSoapStub _stub = new tr.gov.nvi.tckimlik.WS.KPSPublicSoapStub(new java.net.URL(KPSPublicSoap_address), this);
+            if (src.tr.gov.nvi.tckimlik.WS.KPSPublicSoap.class.isAssignableFrom(serviceEndpointInterface)) {
+                src.tr.gov.nvi.tckimlik.WS.KPSPublicSoapStub _stub = new src.tr.gov.nvi.tckimlik.WS.KPSPublicSoapStub(new java.net.URL(KPSPublicSoap_address), this);
                 _stub.setPortName(getKPSPublicSoapWSDDServiceName());
                 return _stub;
             }
