@@ -27,7 +27,7 @@ public class CustomerManager implements CustomerService {
 		//Bu bilgilerin tümünün doðru olmasý duurmunda email doðrulama mail'i gönderiliyor ve database ekleniyor.
 		if (customerCheckService.isValid(customer) == true) {
 			System.out.print(customer.getFirstName() + " kullanýcýsý baþarýyla sisteme eklendi.\n");
-			mailVerificationService.sendMail(customer.getEmail());
+			mailVerificationService.sendToVerifyMail(customer.getEmail());
 			customerDao.add(customer);
 		}
 
@@ -41,10 +41,10 @@ public class CustomerManager implements CustomerService {
 
 		// Bu komutta isVerificated komutunu çaðýrarak buraya gönderilen kullanýcýnýn mail adresinin doðrulanan mail'ler listesinde olup olmadýðýný kontrol ediyoruz.
 		if (customerDao.getEmail(customer.getEmail()) && customerDao.getPassword(customer.getPassword())
-				&& mailVerificationService.isVerificated(customer.getEmail()) == true) {
+				&& mailVerificationService.checkVerifyAccount(customer.getEmail()) == true) {
 			System.out.println("Kullanýcý giriþi baþarýyla yapýldý.");
 			//Bu else if durumunda kullanýcý bilgileri ama mail doðrulanmadýysa uyarýsýný veriyoruz.
-		} else if (mailVerificationService.isVerificated(customer.getEmail()) == false) {
+		} else if (mailVerificationService.checkVerifyAccount(customer.getEmail()) == false) {
 			System.out.println("Kullanýcý bilgileri doðru. Fakat mail adresi doðrulanmadýðý için giriþ yapýlamýyor.");
 		} else {
 			System.out.println("Kullanýcý bilgileri yanlýþ, lütfen kontrol ediniz.");
